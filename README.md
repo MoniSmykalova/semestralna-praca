@@ -1,2 +1,1 @@
-# semestralna-praca
- 
+Semestrálny projekt - Monika Šmýkalová
