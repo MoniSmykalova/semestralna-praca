@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
     <title>Document</title>
 </head>
 <body class="container">
@@ -21,23 +21,24 @@
         <a href="inc/login/logout.php">Odhlásiť sa</a>
     </section>
     <section>
-        <h2>Portfólio</h2>
-        <form action="inc/portfolio/insert.php" method="post">
-            <input type="text" name="name" id="name" placeholder="Názov portfólia">
+        <h2>team
+        </h2>
+        <form action="inc/team/insert.php" method="post">
+            <input type="text" name="name" id="name" placeholder="Názov teamu">
             <input type="text" name="image" id="image" placeholder="Cesta k obrázku">
-            <input type="submit" value="Pridať" name="add_portfolio">
+            <input type="submit" value="Pridať" name="add_team">
         </form>
         <?php
-            $portfolio = $Portfolio->get_portfolio();
+            $team= $team->get_team();
             echo '<table class="admin-table">';
-                foreach($portfolio as $p){
+                foreach($team as $t){
                     echo '<tr>';
-                    echo '<td>'.$p->name;'</td>';
+                    echo '<td>'.$t->name;'</td>';
                     echo '<td>'.'<img width="150" src = "'.$p->image.'">';
                     echo '<td><button class="edit">Editovať</button>';
                     echo '<td>
-                            <form action="inc/portfolio//delete.php" method="post">
-                                <button type = "submit" name="delete_portfolio" value="'.$p->id.'"'.'>Vymazať</button>
+                            <form action="inc/team//delete.php" method="post">
+                                <button type = "submit" name="delete_team" value="'.$p->id.'"'.'>Vymazať</button>
                             </form>';
                     echo '</tr>';
                 }
